@@ -16,12 +16,12 @@ import java.util.*;
 public class MergeArray{
 
     public static void main(String[] args) {
-        int arr1[] = {11, 13, 15, 17, 0, 0, 0, 0};
+        int arr1[] = {0,0,3,0,0,0,0,0,0};
 
-        int arr2[] = {12, 14, 16, 17};
+        int arr2[] = {-1,1,1,1,2,3};
 
 
-        int arr3[] = mergeArrays(arr1,4, arr2,4);
+        int arr3[] = mergeArrays(arr1,3, arr2,arr2.length);
 
         System.out.println("Array after merging - " + Arrays.toString(arr3));
     }
@@ -34,7 +34,7 @@ public class MergeArray{
         while(j>=0){
             if(i==-1){
                 i=0;
-                arr1[i]=0;
+                arr1[i]=Integer.MIN_VALUE;
             }
             if(arr1[i]<arr2[j]){
                 arr1[k--] = arr2[j--];
